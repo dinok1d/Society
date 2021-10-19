@@ -16,11 +16,10 @@ class SocietySTore {
     }
   };
 
-
   fetchsociety = async () => {
     try {
       const response = await api.get("/jam3ya");
-      console.log(response.data);
+      // console.log(response.data);
 
       this.societies = response.data;
     } catch (error) {
