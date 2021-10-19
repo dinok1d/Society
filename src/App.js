@@ -8,7 +8,7 @@ function App() {
     <div>
       <NavBar />
       <Switch>
-        <Route exact path="/SocietyList">
+        <Route exact path="/home">
           <SocietyList />
         </Route>
         <Route exact path="/home">
