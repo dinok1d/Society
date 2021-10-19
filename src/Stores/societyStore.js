@@ -6,6 +6,17 @@ class SocietySTore {
   constructor() {
     makeAutoObservable(this, {});
   }
+
+  createCourse = async (society) => {
+    try {
+      const res = await api.post("/jam3ya", society);
+      this.societies.push(res.data);
+    } catch (error) {
+      console.log("CoursesStore -> createCourse -> error", error);
+    }
+  };
+
+
   fetchsociety = async () => {
     try {
       const response = await api.get("/jam3ya");
