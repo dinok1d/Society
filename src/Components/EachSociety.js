@@ -1,7 +1,7 @@
 import React from "react";
 
 function EachSociety({ society }) {
-  console.log(society.startDate);
+  // console.log(society.startDate);
   return (
     <div>
       <img src={society.image} />

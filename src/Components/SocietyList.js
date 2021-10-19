@@ -6,8 +6,6 @@ import { observer } from "mobx-react";
 import { Button } from "react-bootstrap";
 import AddCourseModal from "./AddCourseModal";
 import Searchbar from "./Searchbar";
-import Moment from "react-moment";
-import "moment-timezone";
 
 function SocietyList() {
   const [course, setCourse] = useState("");
