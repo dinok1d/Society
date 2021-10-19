@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import SocietyList from "./Components/SocietyList";
+import { Route, Switch } from "react-router";
+import NavBar from "./Components/NavBar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavBar />
+      <Switch>
+        <Route exact path="/SocietyList">
+          <SocietyList />
+        </Route>
+        <Route exact path="/home">
+          <home />
+        </Route>
+      </Switch>{" "}
     </div>
   );
 }
 
 export default App;
+
+// whenever we need to Route a pathway we need to keep it within <Route></Route> to give them exact paths
