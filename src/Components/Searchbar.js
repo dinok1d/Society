@@ -1,10 +1,10 @@
 import React from "react";
 
-function Searchbar({ setCourse }) {
+function Searchbar({ setQuery }) {
   return (
     <input
       className="searchBar"
-      onChange={(e) => setCourse(e.target.value)}
+      onChange={(e) => setQuery(e.target.value)}
       placeholder="Search for a Society"
     />
   );
