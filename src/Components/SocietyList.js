@@ -17,9 +17,9 @@ function SocietyList() {
   // if (authStore.user) {
   //   societyStore.fetchsociety();
   // }
-  const today = Date.now();
-  Moment().format("MMMM Do YYYY, h:mm:ss a");
-  // console.log(today);
+  // const today = Date.now();
+  // Moment().format("MMMM Do YYYY, h:mm:ss a");
+  // // console.log(today);
 
   const societies = societyStore.societies
     .filter((society) =>
@@ -27,7 +27,7 @@ function SocietyList() {
     )
     // .filter((society) => society.startDate > society.date)
 
-    .filter((society) => society.amount > Number(course))
+    // .filter((society) => society.amount > Number(course))
 
     .map((society) => {
       return <EachSociety society={society} />;
