@@ -1,3 +1,19 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background-size: 400% 400%;
+  background-color: #ced4da;
+}
+
+.home {
+  display: block;
+  margin: 50px;
+}
+
+.home img {
+  width: 100px;
+}
+
 .App {
   text-align: center;
 }
@@ -25,7 +41,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #ced4da;
 }
 
 @keyframes App-logo-spin {
@@ -34,5 +50,159 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+.navbtn {
+  background-color: #e7e7e7;
+  color: black;
+}
+.box {
+  width: 35%;
+  position: relative;
+  text-align: center;
+  align-items: center;
+}
+.list {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.item {
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.item img {
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.item:hover {
+  transform: scale(1.05);
+}
+
+.margin {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.shadow {
+  -webkit-box-shadow: 0px 0px 25px 20px #000000;
+  box-shadow: 0px 0px 25px 20px #000000;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+.font {
+  font-weight: bold;
+  font-family: "Yantramanav", sans-serif;
+}
+
+.fontw {
+  font-weight: bold;
+  font-family: "Yantramanav", sans-serif;
+  color: #e7e7e7;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.tracking-in-contract-bck-top {
+  -webkit-animation: tracking-in-contract-bck-top 1s ease-out both;
+  animation: tracking-in-contract-bck-top 1s ease-out both;
+}
+
+@keyframes tracking-in-contract-bck-top {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px) translateY(-300px);
+    transform: translateZ(400px) translateY(-300px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 5;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+
+.heartbeat {
+  -webkit-animation: heartbeat 1.5s ease-in-out 1 both;
+  animation: heartbeat 1.5s ease-in-out 1 both;
+}
+
+@-webkit-keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
 }

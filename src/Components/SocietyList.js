@@ -37,9 +37,14 @@ function SocietyList() {
     <section id="courses" class="course-area pt-140 pb-170 hero-area bg_cover">
       <Searchbar setQuery={setQuery} />
       <div class="container">
-        <Button variant="warning" onClick={openModal}>
-          Add a Society
-        </Button>
+        <button
+          variant="warning"
+          type="button"
+          class="btn btn-secondary position-relative m-2 w-25 form-control "
+          onClick={openModal}
+        >
+          Add a Jam3ya
+        </button>
         <AddSocietyModal isOpen={isOpen} closeModal={closeModal} />
         {/* <DetailedSociety item={item} isOpen={isOpen} closeModal={closeModal} /> */}
         <div class="row mb-30 mt-30">{societies}</div>

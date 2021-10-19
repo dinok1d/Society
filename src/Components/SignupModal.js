@@ -65,12 +65,22 @@ export default function SignupModal(props) {
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="warning" onClick={handleSubmit}>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          variant="warning"
+          onClick={handleSubmit}
+        >
           {props.signIn ? "Sign in" : "Sign up"}
-        </Button>
-        <Button variant="warning" onClick={props.closeModal}>
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          variant="warning"
+          onClick={props.closeModal}
+        >
           Close
-        </Button>
+        </button>
       </Modal.Footer>
     </Modal>
   );

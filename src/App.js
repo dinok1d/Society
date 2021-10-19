@@ -2,17 +2,18 @@ import "./App.css";
 import SocietyList from "./Components/SocietyList";
 import { Route, Switch } from "react-router";
 import NavBar from "./Components/NavBar";
+import FirstPage from "./Components/FirstPage";
 
 function App() {
   return (
     <div>
       <NavBar />
       <Switch>
-        <Route exact path="/home">
+        <Route exact path="/SocietyList">
           <SocietyList />
         </Route>
         <Route exact path="/home">
-          <home />
+          <FirstPage />
         </Route>
       </Switch>{" "}
     </div>

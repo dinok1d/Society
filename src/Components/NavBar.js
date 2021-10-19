@@ -1,5 +1,5 @@
 import { observer } from "mobx-react";
-import Logo from "./logo";
+import Logo from "../jam3ya1.png";
 import { NavLink } from "react-router-dom";
 import authStore from "../Stores/authStore";
 import SignupModal from "./SignupModal";
@@ -11,41 +11,69 @@ function NavBar() {
   const [signIn, setSignIn] = useState(false);
 
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
+    <nav className=" navbar navbar-expand-lg navbar-dark bg-dark">
+      <div className="container-fluid">
         <NavLink to="/home">
-          <img id="logo" src={Logo} alt="Logo" width="77" height="77" />
+          <img
+            className="m-1"
+            id="logo"
+            src={Logo}
+            alt="Logo"
+            width="120"
+            height="20"
+          />
         </NavLink>
-        <NavLink to="/home"> Home</NavLink>
-        <NavLink to="societies">societies</NavLink>
+
+        <NavLink to="/home">
+          <button type="button" className="btn btn-outline-secondary">
+            Home
+          </button>{" "}
+        </NavLink>
+        <NavLink to="/SocietyList">
+          <button type="button" className="btn btn-outline-secondary">
+            Jam3yat
+          </button>
+        </NavLink>
         {authStore.user ? (
           <>
-            <h5 className="nav-item">Hello {authStore.user.username}</h5>
+            <h5 className=" nav-item badge bg-secondary text-wrap">
+              Welcome Back {authStore.user.username}!
+            </h5>
             <h5 className="nav-item">
-              <Button onClick={() => authStore.logout()}>Logout</Button>{" "}
+              <button
+                type="button"
+                className="btn btn-outline-secondary"
+                onClick={() => authStore.logout()}
+              >
+                Logout
+              </button>{" "}
             </h5>
           </>
         ) : (
           <>
-            <h5 className="nav-item">
-              <Button
+            <h5>
+              <button
+                type="button"
+                className="btn btn-outline-secondary"
                 onClick={() => {
                   setSignupIsOpen(true);
                   setSignIn(false);
                 }}
               >
                 Sign up
-              </Button>
+              </button>
             </h5>
             <h5>
-              <Button
+              <button
+                type="button"
+                className=" btn btn-outline-secondary"
                 onClick={() => {
                   setSignupIsOpen(true);
                   setSignIn(true);
                 }}
               >
                 Sign in
-              </Button>
+              </button>
               <SignupModal
                 signIn={signIn}
                 closeModal={() => setSignupIsOpen(false)}

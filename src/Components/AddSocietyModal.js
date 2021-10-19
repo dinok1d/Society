@@ -4,7 +4,6 @@ import societyStore from "../Stores/societyStore";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-
 // Add a form for the user to create their own jam3ya. Once created, the jam3ya should appear in the homepage.
 
 // backend route to create a jam3ya:
@@ -22,11 +21,10 @@ export default function AddCourseModal(props) {
   const [society, setSociety] = useState({
     title: "",
     image: "",
-    amount:"",
-    limit:"",
-    startDate:"",
-    endDate:"",
-    
+    amount: "",
+    limit: "",
+    startDate: "",
+    endDate: "",
   });
   const handleChange = (event) => {
     setSociety({ ...society, [event.target.name]: event.target.value });
@@ -45,17 +43,17 @@ export default function AddCourseModal(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">Add Course</Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">Add Jam3ya</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
           <Form.Group className="mb-3">
-            <Form.Label>Course title</Form.Label>
+            <Form.Label>Jam3ya title</Form.Label>
             <Form.Control
               type="text"
               onChange={handleChange}
               name="title"
-              placeholder="Enter course title"
+              placeholder="Enter Jam3ya title"
             />
           </Form.Group>
 
@@ -86,7 +84,7 @@ export default function AddCourseModal(props) {
               placeholder="Enter amount of people who can join"
             />
           </Form.Group>
-        
+
           <Form.Group className="mb-3">
             <Form.Label>start Date</Form.Label>
             <DatePicker
@@ -101,21 +99,26 @@ export default function AddCourseModal(props) {
               onChange={(date) => setSociety({ ...society, endDate: date })}
             />
           </Form.Group>
-          
-         
-          
-
-          
         </Form>
-        <p>only registered users can create courses</p>
+        <p>only registered users can create Jam3ya</p>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="warning" onClick={handleSubmit}>
-          Add a Society
-        </Button>
-        <Button variant="warning" onClick={props.closeModal}>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          variant="warning"
+          onClick={handleSubmit}
+        >
+          Add a Jam3ya
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          variant="warning"
+          onClick={props.closeModal}
+        >
           Close
-        </Button>
+        </button>
       </Modal.Footer>
     </Modal>
   );
