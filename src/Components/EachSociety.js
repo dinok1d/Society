@@ -14,7 +14,7 @@ function EachSociety({ society, SetItem }) {
 
   return (
     <div
-      className="item col m-4 heartbeat "
+      className="item col m-5 heartbeat "
       onClick={() => {
         SetItem(society);
       }}
