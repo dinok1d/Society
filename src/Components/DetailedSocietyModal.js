@@ -1,10 +1,10 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
-function DetailedSociety({ society, detail, closedetail }) {
+function DetailedSociety({ society, opendetail, closeDetail }) {
   return (
     <Modal
-      show={detail}
-      onHide={closedetail}
+      show={opendetail}
+      onHide={closeDetail}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
@@ -15,8 +15,11 @@ function DetailedSociety({ society, detail, closedetail }) {
         <p>{society.startDate}</p>
         <p>{society.endDate}</p>
         <p>{society.amount}</p>
-        <p>{society.author}</p>
+        <p>{society.author.username}</p>
       </div>
+      <button className=" btn btn-secondary" onClick={closeDetail}>
+        close
+      </button>
     </Modal>
   );
 }

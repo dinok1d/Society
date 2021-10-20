@@ -5,25 +5,18 @@ import { useState } from "react";
 import societyStore from "../Stores/societyStore";
 import UpdateSocietyModal from "./UpdateSociety";
 import DetailedSocietyModal from "./DetailedSocietyModal";
-
+import authStore from "../Stores/authStore";
 function EachSociety({ society, SetItem }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [openDetail, setOpenDetail] = useState(false);
 
   const closeModal = () => setIsOpen(false);
-
   const openModal = () => setIsOpen(true);
-
-  const [detail, setDetail] = useState(false);
-
-  const closedetail = () => setDetail(false);
+  const opendetail = () => setOpenDetail(true);
+  const closeDetail = () => setOpenDetail(false);
 
   return (
-    <div
-      className="item col m-5 heartbeat "
-      onClick={() => {
-        SetItem(society);
-      }}
-    >
+    <div className="item col m-5 heartbeat " onClick={opendetail}>
       <Card style={{ width: "18rem", borderRadius: "10px" }}>
         <Card.Img
           variant="top"
@@ -53,20 +46,23 @@ function EachSociety({ society, SetItem }) {
               <strong>Joined Users:</strong>
             </div>
           </Card.Text>
-        </Card.Body>{" "}
-        <button className=" btn btn-secondary" onClick={openModal}>
-          Update Jam3ya{" "}
-        </button>
+        </Card.Body>
+        //{" "}
+        {authStore.user._id === society.author._id && (
+          <button className=" btn btn-secondary" onClick={openModal}>
+            // Update //{" "}
+          </button>
+        )}
         <UpdateSocietyModal
           isOpen={isOpen}
           closeModal={closeModal}
           society={society}
         ></UpdateSocietyModal>
-        <DetailedSocietyModal>
-          isOpendetail={isOpendetail}
-          closeModaldetail={closeModaldetail}
+        <DetailedSocietyModal
+          opendetail={openDetail}
+          closeDetail={closeDetail}
           society={society}
-        </DetailedSocietyModal>
+        ></DetailedSocietyModal>
       </Card>
     </div>
   );

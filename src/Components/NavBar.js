@@ -5,6 +5,7 @@ import authStore from "../Stores/authStore";
 import SignupModal from "./SignupModal";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
+import SigninModal from "./signInModal";
 
 function NavBar() {
   const [signupIsOpen, setSignupIsOpen] = useState(false);
@@ -62,6 +63,11 @@ function NavBar() {
               >
                 Sign up
               </button>
+              <SignupModal
+                signIn={signIn}
+                closeModal={() => setSignupIsOpen(false)}
+                isOpen={signupIsOpen}
+              />
             </h5>
             <h5>
               <button
@@ -74,10 +80,10 @@ function NavBar() {
               >
                 Sign in
               </button>
-              <SignupModal
+              {/* <SigninModal
                 signIn={signIn}
                 closeModal={() => setSignupIsOpen(false)}
-                isOpen={signupIsOpen}
+                isOpen={signupIsOpen} */}
               />
             </h5>
           </>
