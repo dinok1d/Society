@@ -49,7 +49,7 @@ function SocietyList() {
           Add a Jam3ya
         </button>
         <AddSocietyModal isOpen={isOpen} closeModal={closeModal} />
-        <DetailedSociety item={item} isOpen={isOpen} closeModal={closeModal} />
+        {/* <DetailedSociety item={item} isOpen={isOpen} closeModal={closeModal} /> */}
         <div class="row mb-30 mt-30">{societies}</div>
       </div>
     </section>

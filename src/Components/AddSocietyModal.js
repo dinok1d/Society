@@ -18,7 +18,7 @@ export default function AddCourseModal(props) {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    societyStore.createCourse(society);
+    societyStore.createSociety(society);
     props.closeModal();
   };
   return (
