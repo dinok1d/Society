@@ -4,20 +4,17 @@ import { Card } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import societyStore from "../Stores/societyStore";
 
-
- 
-
 function EachSociety({ society, SetItem }) {
-  
   const handleDelete = () => {
     societyStore.deleteSociety(society._id);
   };
   return (
-    <div className="item col m-4 heartbeat "  
-    onClick={() => {
-      SetItem(society);
-    }}
-  >
+    <div
+      className="item col m-4 heartbeat "
+      onClick={() => {
+        SetItem(society);
+      }}
+    >
       <Card style={{ width: "18rem", borderRadius: "10px" }}>
         <Card.Img
           variant="top"
@@ -49,12 +46,11 @@ function EachSociety({ society, SetItem }) {
           </Card.Text>
         </Card.Body>
         <Button className="delete" onClick={handleDelete}>
-        Delete
-      </Button>
-      {/* <Button className="delete" onClick={openModal}>
+          Delete Society
+        </Button>
+        {/* <Button className="delete" onClick={openModal}>
         Update
       </Button> */}
-      
       </Card>
     </div>
   );
