@@ -10,7 +10,7 @@ function EachSociety({ society, SetItem }) {
   };
   return (
     <div
-      className="item col m-4 heartbeat "
+      className="item col m-5 heartbeat "
       onClick={() => {
         SetItem(society);
       }}
@@ -45,9 +45,9 @@ function EachSociety({ society, SetItem }) {
             </div>
           </Card.Text>
         </Card.Body>
-        <Button className="delete" onClick={handleDelete}>
-          Delete Society
-        </Button>
+        <button className="delete btn btn-secondary" onClick={handleDelete}>
+          Delete Jam3ya
+        </button>
         {/* <Button className="delete" onClick={openModal}>
         Update
       </Button> */}
