@@ -26,13 +26,27 @@ class SocietySTore {
       console.error("societyStore -> fetchsociety -> error", error);
     }
   };
+  updateSociety = async (jam3yaId, updatedSociety) => {
+    try {
+      const res = await api.put(`/jam3ya/${jam3yaId}`, updatedSociety);
+      this.societies = this.societies.map((society) => {
+        if (society._id === jam3yaId) {
+          return res.data;
+        } else {
+          return society;
+        }
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   deleteSociety = async (jam3yaId) => {
     try {
-      await api.delete(
-        `/jam3ya/${jam3yaId}`
+      await api.delete(`/jam3ya/${jam3yaId}`);
+      this.societies = this.societies.filter(
+        (society) => society._id !== jam3yaId
       );
-      this.societies = this.societies.filter((society) => society._id !== jam3yaId);
     } catch (error) {
       console.log(error);
     }

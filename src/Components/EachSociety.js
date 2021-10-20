@@ -1,13 +1,20 @@
 import React from "react";
 import Moment from "react-moment";
 import { Card } from "react-bootstrap";
-import { Button } from "react-bootstrap";
+import { useState } from "react";
 import societyStore from "../Stores/societyStore";
+import UpdateSocietyModal from "./UpdateSociety";
 
 function EachSociety({ society, SetItem }) {
-  const handleDelete = () => {
-    societyStore.deleteSociety(society._id);
-  };
+  const [isOpen, setIsOpen] = useState(false);
+
+  const closeModal = () => setIsOpen(false);
+
+  const openModal = () => setIsOpen(true);
+
+  // const handleDelete = () => {
+  //   societyStore.deleteSociety(society._id);
+  // };
   return (
     <div
       className="item col m-4 heartbeat "
@@ -45,15 +52,31 @@ function EachSociety({ society, SetItem }) {
             </div>
           </Card.Text>
         </Card.Body>
-        <Button className="delete" onClick={handleDelete}>
-          Delete Society
-        </Button>
-        {/* <Button className="delete" onClick={openModal}>
-        Update
-      </Button> */}
+        {/* <button className="delete btn btn-secondary" onClick={handleDelete}>
+          Delete Jam3ya
+        </button> */}
+        //{" "}
+        <button className=" btn btn-secondary" onClick={openModal}>
+          // Update //{" "}
+        </button>
+        <UpdateSocietyModal
+          isOpen={isOpen}
+          closeModal={closeModal}
+          society={society}
+        ></UpdateSocietyModal>
       </Card>
     </div>
   );
 }
 
 export default EachSociety;
+//  <Button className="delete" onClick={openModal}>
+// Update
+// </Button>
+// <updateSociety isOpen={isOpen} closeModal={closeModal} society={props.society}
+
+{
+  /* <button className="delete btn btn-secondary" onClick={handleDelete}>
+          Delete Jam3ya
+        </button> */
+}

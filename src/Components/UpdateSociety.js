@@ -1,66 +1,82 @@
-import { Modal, Button, InputGroup, Form } from "react-bootstrap";
+import { Modal, Button, Form } from "react-bootstrap";
 import React, { useState } from "react";
 import societyStore from "../Stores/societyStore";
 
-
-// i need to edit this
-
-export default function UpdateRoomModal(props) {
-  const [room, setRoom] = useState({
-    id: props.room.id,
-    title: props.room.title,
-    image: props.room.image,
-    description: props.room.description,
+export default function UpdateSocietyModal(props) {
+  const [society, setSociety] = useState({
+    title: props.society.title,
+    image: props.society.image,
+    amount: props.society.amount,
+    limit: props.society.limit,
   });
   const handleChange = (event) => {
-    setRoom({ ...room, [event.target.name]: event.target.value });
+    setSociety({ ...society, [event.target.name]: event.target.value });
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    roomStore.updateRoom(room);
+    societyStore.updateSociety(props.society._id, society);
     props.closeModal();
   };
+  const handleDelete = () => {
+    societyStore.deleteSociety(props.society._id);
+    props.closeModal();
+  };
+
   return (
     <Modal centered show={props.isOpen} onHide={props.closeModal}>
       <Modal.Header closeButton>
-        <Modal.Title>Update a room</Modal.Title>
+        <Modal.Title>Update a jam3ya</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSubmit}>
-          <InputGroup>
-            <InputGroup.Text>Title</InputGroup.Text>
+          <Form.Group className="mb-3">
+            <Form.Label>Jam3ya title</Form.Label>
             <Form.Control
-              value={room.title}
               type="text"
+              onChange={handleChange}
+              value={society.title}
               name="title"
-              onChange={handleChange}
+              placeholder="Enter Jam3ya title"
             />
-          </InputGroup>
-          <br />
-          <InputGroup>
-            <InputGroup.Text>Image</InputGroup.Text>
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Image url</Form.Label>
             <Form.Control
-              value={room.image}
               type="text"
+              onChange={handleChange}
+              value={society.image}
               name="image"
-              onChange={handleChange}
+              placeholder="Enter image url"
             />
-          </InputGroup>
-          <br />
-          <InputGroup>
-            <InputGroup.Text>Description</InputGroup.Text>
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Amount</Form.Label>
             <Form.Control
-              type="text"
-              name="description"
+              type="number"
               onChange={handleChange}
-              value={room.description}
+              value={society.amount}
+              name="amount"
+              placeholder="Enter the amount"
             />
-          </InputGroup>
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>limit of people who can join</Form.Label>
+            <Form.Control
+              type="number"
+              onChange={handleChange}
+              value={society.limit}
+              name="limit"
+              placeholder="Enter amount of people who can join"
+            />
+          </Form.Group>{" "}
+          <Button variant="primary" onClick={handleSubmit}>
+            Update Jam3ya
+          </Button>
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="primary" onClick={handleSubmit}>
-          Update room
+        <Button className="delete" onClick={handleDelete}>
+          Delete Society
         </Button>
       </Modal.Footer>
     </Modal>
