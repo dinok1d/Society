@@ -2,9 +2,17 @@ import React from "react";
 import Moment from "react-moment";
 import { Card } from "react-bootstrap";
 
+ // console.log(moment(society.startDate).format());
+  // console.log(new Date(society.startDate));
+  // console.log(society);
+
 function EachSociety({ society, SetItem }) {
   return (
-    <div className="item col m-4 heartbeat ">
+    <div className="item col m-4 heartbeat "  
+    onClick={() => {
+      SetItem(society);
+    }}
+  >
       <Card style={{ width: "18rem", borderRadius: "10px" }}>
         <Card.Img
           variant="top"

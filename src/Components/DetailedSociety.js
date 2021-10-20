@@ -15,7 +15,7 @@ function DetailedSociety({ item, isOpen, closeModal }) {
         <p>{item.startDate}</p>
         <p>{item.endDate}</p>
         <p>{item.amount}</p>
-        <p>{item.author.username}</p>
+        <p>{item.author}</p>
       </div>
     </Modal>
   );

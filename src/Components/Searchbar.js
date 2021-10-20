@@ -1,6 +1,6 @@
 import React from "react";
 
-function Searchbar({ setQuery }) {
+function Searchbar({ setQuery ,start, setStart}) {
   return (
     <div class="position-relative ">
       <input
@@ -9,7 +9,16 @@ function Searchbar({ setQuery }) {
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search for a Jam3ya!"
       />
+        <div>
+      <label>
+      <input type="checkbox" onClick={() => setStart(!start)} />
+        Would you like to filter started Jam3yat?
+      </label></div>
     </div>
+
+// we need to change the location of the filter
+    
+    
   );
 }
 

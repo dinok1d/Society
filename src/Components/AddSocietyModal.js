@@ -4,19 +4,6 @@ import societyStore from "../Stores/societyStore";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-// Add a form for the user to create their own jam3ya. Once created, the jam3ya should appear in the homepage.
-
-// backend route to create a jam3ya:
-// https://coded-miniproject-jam3ya-be.herokuapp.com/jam3ya
-// type: post
-// data required: (USER SHOULD BE SIGNED IN)
-// - title : string, the title of the jam3ya
-// - image : string, an image URL
-// - amount : int, the amount the user should pay monthly
-// - limit : int, the limit of people that can join the jam3ya
-// - startDate : Date, the date that the jam3ya starts in
-// - endDate : Date, the date that the jam3ya ends at
-
 export default function AddCourseModal(props) {
   const [society, setSociety] = useState({
     title: "",
