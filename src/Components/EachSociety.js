@@ -4,6 +4,7 @@ import { Card } from "react-bootstrap";
 import { useState } from "react";
 import societyStore from "../Stores/societyStore";
 import UpdateSocietyModal from "./UpdateSociety";
+import DetailedSocietyModal from "./DetailedSocietyModal";
 
 function EachSociety({ society, SetItem }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +12,10 @@ function EachSociety({ society, SetItem }) {
   const closeModal = () => setIsOpen(false);
 
   const openModal = () => setIsOpen(true);
+
+  const [detail, setDetail] = useState(false);
+
+  const closedetail = () => setDetail(false);
 
   return (
     <div
@@ -58,6 +63,11 @@ function EachSociety({ society, SetItem }) {
           closeModal={closeModal}
           society={society}
         ></UpdateSocietyModal>
+        <DetailedSocietyModal>
+          isOpendetail={isOpendetail}
+          closeModaldetail={closeModaldetail}
+          society={society}
+        </DetailedSocietyModal>
       </Card>
     </div>
   );
