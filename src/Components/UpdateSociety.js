@@ -25,12 +25,12 @@ export default function UpdateSocietyModal(props) {
   return (
     <Modal centered show={props.isOpen} onHide={props.closeModal}>
       <Modal.Header closeButton>
-        <Modal.Title>Update a jam3ya</Modal.Title>
+        <Modal.Title>Update Jam3ya</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
-            <Form.Label>Jam3ya title</Form.Label>
+            <Form.Label>Jam3ya Title:</Form.Label>
             <Form.Control
               type="text"
               onChange={handleChange}
@@ -40,17 +40,17 @@ export default function UpdateSocietyModal(props) {
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Image url</Form.Label>
+            <Form.Label>Image (url):</Form.Label>
             <Form.Control
               type="text"
               onChange={handleChange}
               value={society.image}
               name="image"
-              placeholder="Enter image url"
+              placeholder="Enter image url:"
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Amount</Form.Label>
+            <Form.Label>Amount:</Form.Label>
             <Form.Control
               type="number"
               onChange={handleChange}
@@ -60,7 +60,7 @@ export default function UpdateSocietyModal(props) {
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>limit of people who can join</Form.Label>
+            <Form.Label>Limit of people who can join:</Form.Label>
             <Form.Control
               type="number"
               onChange={handleChange}
@@ -69,15 +69,19 @@ export default function UpdateSocietyModal(props) {
               placeholder="Enter amount of people who can join"
             />
           </Form.Group>{" "}
-          <Button variant="primary" onClick={handleSubmit}>
+          <button
+            ClassName="btn btn-secondary"
+            variant="primary"
+            onClick={handleSubmit}
+          >
             Update Jam3ya
-          </Button>
+          </button>
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button className="delete" onClick={handleDelete}>
+        <button className="delete btn btn-secondary" onClick={handleDelete}>
           Delete Society
-        </Button>
+        </button>
       </Modal.Footer>
     </Modal>
   );

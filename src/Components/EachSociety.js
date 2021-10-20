@@ -48,10 +48,9 @@ function EachSociety({ society, SetItem }) {
               <strong>Joined Users:</strong>
             </div>
           </Card.Text>
-        </Card.Body>
-        //{" "}
+        </Card.Body>{" "}
         <button className=" btn btn-secondary" onClick={openModal}>
-          // Update //{" "}
+          Update Jam3ya{" "}
         </button>
         <UpdateSocietyModal
           isOpen={isOpen}
